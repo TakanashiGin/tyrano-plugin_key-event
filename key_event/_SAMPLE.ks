@@ -35,26 +35,27 @@
 ; for文
 [eval exp="tf.i = 0"]
 *nextfor
-[iscript]
-tf.name = 'num' + tf.i;
-tf.key_code = 49 + (tf.i-1);
-[endscript]
-[key_event name="&tf.name" clear="true" method="keyup" key_code="&tf.key_code" exp="console.log(preexp)" preexp="&tf.i"]
+    [iscript]
+    tf.name = 'num' + tf.i;
+    tf.key_code = 49 + (tf.i-1);
+    [endscript]
+    [key_event name="&tf.name" clear="true" method="keyup" key_code="&tf.key_code" exp="console.log(preexp)" preexp="&tf.i"]
 [eval exp="tf.i++"]
 [jump target="nextfor" cond="tf.i <= 5"]
 
 
 *return
+[eval exp="console.log(tyrano.plugin.kag.stat.running_key_event)"]
 [s]
 
 
 *click_target
-[clear_key_event name="alp"]
+[clear_key_event name="clk"]
 [iscript]
 tf.num += 10;
 console.log('tf.num += 10');
 [endscript]
-[key_event name="alp" clear="true" method="keydown" key_code="78" exp="tf.num++;console.log(tf.num);"]
+[key_event name="clk" clear="true" method="click" target="click_target"]
 [jump target="return"]
 
 
