@@ -172,9 +172,7 @@ $.key_event = {
 
 
     parseElement: function(elem) {
-        if (elem === "window") return window;
-        else if (elem === "document") return document;
-        else return elem;
+        return elem === 'window'? window : elem === 'document'? document : elem;
     }
 
 
