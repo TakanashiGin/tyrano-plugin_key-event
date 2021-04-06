@@ -234,8 +234,9 @@ tyrano.plugin.kag.tag.make_key_event = {
 
     start: function(pm) {
         //console.log('tag: [make_key_event]');
-        $.key_event.resetEventAll();
-        $.key_event.startEventAll();
+        const tmp = object(this.kag.stat.running_key_event);
+        this.kag.stat.running_key_event = [];
+        tmp.forEach(param => $.key_event.pushEvent(param));
         this.kag.ftag.nextOrder();
     }
 
