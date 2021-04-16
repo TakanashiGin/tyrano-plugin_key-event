@@ -44,7 +44,8 @@
 
 
 *return
-[eval exp="console.log(tyrano.plugin.kag.stat.running_key_event)"]
+; 以下の関数を実行するとConsoleに現在登録されているキーイベントの情報を出力できます
+[eval exp="$.key_event.check()"]
 [s]
 
 
