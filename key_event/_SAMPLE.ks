@@ -1,4 +1,3 @@
-
 ; プラグイン読み込み
 [plugin name="key_event"]
 
